@@ -13,7 +13,6 @@ const App = () => {
   const [currentTheme, setCurrentTheme] = useState("light");
 
   useEffect(() => {
-    // Simulate loading with a minimum duration for better UX
     const timer = setTimeout(() => {
       fetchReport().then(data => {
         setReport(data);
@@ -21,7 +20,6 @@ const App = () => {
       });
     }, 1200);
     
-    // Load saved notes
     const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
     setNotes(savedNotes);
     
@@ -39,7 +37,6 @@ const App = () => {
     setNotes(updatedNotes);
     localStorage.setItem("notes", JSON.stringify(updatedNotes));
     
-    // Show animation feedback
     const noteElement = document.getElementById("notes-container");
     if (noteElement) {
       noteElement.classList.add("flash-highlight");
@@ -58,7 +55,6 @@ const App = () => {
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
       
-      // Highlight effect on the scrolled section
       section.classList.add("highlight-section");
       setTimeout(() => section.classList.remove("highlight-section"), 1500);
     }
@@ -130,10 +126,10 @@ const App = () => {
       
       {/* Main content */}
       <main className="max-w-7xl mx-auto p-6">
-        <div className="flex space-x-6">
+        <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
           {/* Main report viewer */}
           <div className={`transition-all duration-500 ease-in-out ${
-            showSidebar ? "w-2/3" : "w-full"
+            showSidebar ? "md:w-2/3" : "w-full"
           }`}>
             <div className="animate-fade-in">
               <ReportViewer report={report} onAddNote={addNote} />
@@ -144,7 +140,7 @@ const App = () => {
           <div 
             id="notes-container"
             className={`transition-all duration-500 ease-in-out ${
-              showSidebar ? "w-1/3 opacity-100 translate-x-0" : "w-0 opacity-0 translate-x-8 overflow-hidden"
+              showSidebar ? "md:w-1/3 opacity-100 translate-x-0" : "w-0 opacity-0 translate-x-8 overflow-hidden"
             }`}
           >
             <NotesPanel 
