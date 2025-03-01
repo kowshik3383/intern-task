@@ -1,0 +1,15 @@
+{
+  "title": "Annual Report 2025",
+  "sections": [
+    {
+      "id": "section-1",
+      "title": "Company Overview",
+      "content": "This year, our company achieved significant milestones..."
+    },
+    {
+      "id": "section-2",
+      "title": "Financial Performance",
+      "content": "Revenue increased by 20% due to strong product demand..."
+    }
+  ]
+}
