@@ -35,7 +35,7 @@ const EnhancedLoader = () => {
         />
       </div>
       
-      {/* Loading text with fade effect */}
+      {/* Loading text with fade effect  */}
       <div className="mt-3 text-sm font-medium text-gray-700 animate-pulse">
         Loading...
       </div>

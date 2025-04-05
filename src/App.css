@@ -1,1 +1,98 @@
 @import "tailwindcss";
+/* For Webkit Browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 2px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Scrollbar handle color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Handle color on hover */
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+  @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+          from { 
+            opacity: 0;
+            transform: translateY(-40px); 
+          }
+          to { 
+            opacity: 1;
+            transform: translateY(0); 
+          }
+        }
+        
+        @keyframes cardSlideIn {
+          from { 
+            opacity: 0;
+            transform: translateX(40px); 
+          }
+          to { 
+            opacity: 1;
+            transform: translateX(0); 
+          }
+        }
+        
+        @keyframes zoomIn {
+          from { 
+            opacity: 0;
+            transform: scale(0.95); 
+          }
+          to { 
+            opacity: 1;
+            transform: scale(1); 
+          }
+        }
+        
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulseSlow {
+          0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4); }
+          70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(255, 204, 0, 0); }
+          100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
+        }
+        
+        .animate-fade-in {
+          animation: fadeIn 1.2s forwards;
+        }
+        
+        .animate-slide-in {
+          animation: slideIn 0.8s forwards;
+        }
+        
+        .animate-card {
+          animation: cardSlideIn 0.8s forwards;
+        }
+        
+        .animate-zoom-in {
+          animation: zoomIn 1s forwards;
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-pulse-slow {
+          animation: pulseSlow 2s infinite;
+        }
